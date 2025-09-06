@@ -14,23 +14,23 @@
 </head>
 
 <body class="outfit-font bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
-    <div class="w-[300px] h-[130px] bg-[url('./assets/bg.png')] bg-cover flex justify-center items-center ">
+    <div class="w-[316px] h-[150px] bg-[url('./assets/bg.png')] bg-cover flex justify-center items-center ">
         <img src="assets/Group.png" alt="">
     </div>
     <form class="bg-white p-6 rounded-3xl">
         <div class="mb-4">
             <label class="font-semibold text-base" for="">Mobile Number</label>
             <br>
-            <input type="text" placeholder="Enter your number"
+            <input type="text" id="mobile-number" placeholder="Enter your number"
                 class="input bg-[#f4f5f7] w-[338px] h-[52px] p-5 rounded-4xl mt-2" />
         </div>
         <div class="mb-4">
             <label class="font-semibold text-base" for="">4 Digit Pin</label>
             <br>
-            <input type="text" placeholder="Enter 4 Digit Pin"
+            <input type="text" placeholder="Enter 4 Digit Pin" id="pin-number"
                 class="input bg-[#f4f5f7] w-[338px] h-[52px] p-5 rounded-4xl mt-2" />
         </div>
-        <button class="btn bg-[#0874f2] text-white rounded-4xl w-full h-[53px] ">Login</button>
+        <button id="btn-login"  class="btn bg-[#0874f2] text-white rounded-4xl w-full h-[53px] ">Login</button>
     </form>
     <script src="script.js"></script>
 </body>
