@@ -30,3 +30,26 @@ document.getElementById("btn-add-money")
 
 
     })
+
+    // cash out section 
+    document.getElementById("btn-withdraw-money").addEventListener("click", function(event){
+        event.preventDefault();
+        const amount = parseInt(document.getElementById("withdraw-amount").value);
+
+        const availableBalance = parseInt(document.getElementById("available-balance").innerText);
+
+        const totalAvailableBalance = availableBalance - amount;
+
+        document.getElementById("available-balance").innerText = totalAvailableBalance;
+        document.getElementById("withdraw-amount").value = '';
+    })
+
+    // toggle features 
+    document.getElementById("add-money-button").addEventListener("click", function(){
+        document.getElementById("cashout-parent").style.display = "none";
+        document.getElementById("add-money-parent").style.display = "block";   
+    })
+    document.getElementById("cashout-button").addEventListener("click", function(){
+        document.getElementById("add-money-parent").style.display = "none";
+        document.getElementById("cashout-parent").style.display = "block";   
+    })
