@@ -52,7 +52,8 @@
                     <img class="mx-auto" src="./assets/send1.png" alt="">
                     <h2 class="text-[#08080880] text-base">Cashout</h2>
                 </div>
-                <div id="transferMoney-button" class=" form-btn border-1 border-[#08080880]  rounded-xl p-5 text-center ">
+                <div id="transferMoney-button"
+                    class=" form-btn border-1 border-[#08080880]  rounded-xl p-5 text-center ">
                     <img class="mx-auto" src="./assets/money1.png" alt="">
                     <h2 class="text-[#08080880] text-base">Transfer Money</h2>
                 </div>
@@ -180,11 +181,12 @@
                 <input id="add-pin" type="text" placeholder="Enter your coupon"
                     class="input bg-[#f4f5f7] w-full h-[52px] p-5 rounded-4xl mt-2" />
             </div>
-            <button id="btn-add-money" class="btn bg-[#0874f2] text-white rounded-4xl w-full h-[53px] ">Get Bonus</button>
+            <button id="btn-add-money" class="btn bg-[#0874f2] text-white rounded-4xl w-full h-[53px] ">Get
+                Bonus</button>
         </form>
     </div>
     <!-- transfer money  -->
-     <div style="display: none;" id="transferMoney-parent" class="form max-w-lg mx-auto mt-8">
+    <div style="display: none;" id="transferMoney-parent" class="form max-w-lg mx-auto mt-8">
         <h1 class="font-semibold text-lg">Transfer Money</h1>
         <form class="bg-white p-6 rounded-3xl mt-4">
             <div class="mb-4">
@@ -205,10 +207,35 @@
                 <input type="text" placeholder="Enter 4 digit pin number"
                     class="input bg-[#f4f5f7] w-full h-[52px] p-5 rounded-4xl mt-2" />
             </div>
-            <button id="btn-withdraw-money" class="btn bg-[#0874f2] text-white rounded-4xl w-full h-[53px] ">Send Now</button>
+            <button id="btn-withdraw-money" class="btn bg-[#0874f2] text-white rounded-4xl w-full h-[53px] ">Send
+                Now</button>
         </form>
 
     </div>
+    <!-- Transactions  -->
+    <div style="display: none;" id="transaction-parent" class="form max-w-lg mx-auto mt-8">
+        <div class="flex justify-between items-center mb-3">
+            <h1 class="font-semibold text-lg">Transaction History</h1>
+            <p class="text-[#08080880]">View All</p>
+        </div>
+        <div id="transaction-container">
+            <div class="flex justify-between items-center p-3 bg-white rounded-xl">
+                <div class="flex items-center">
+                    <div class="bg-[#f4f5f7] p-3 rounded-full">
+                        <img class="mx-auto" src="./assets/wallet1.png" alt="">
+                    </div>
+                    <div class="ml-3">
+                        <h1>Electricity Bill</h1>
+                        <p>Today 01:48 AM</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="home.js"></script>
 </body>
 

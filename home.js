@@ -44,6 +44,7 @@ function handleButtonToggle(id) {
 
 const validPin = 1234;
 const validAccountNumber = 1894142714;
+const transactionData = []
 
 // add money section
 document.getElementById("btn-add-money")
@@ -69,7 +70,36 @@ document.getElementById("btn-add-money")
         setInnerText(totalBalance);
         document.getElementById("add-amount").value = '';
 
+        const data = {
+            name: "Add Money",
+            date: new Date().toLocaleDateString()
+        }
+        transactionData.push(data);
+
     })
+document.getElementById("transaction-button").addEventListener("click", function () {
+  const transactionContainer = document.getElementById("transaction-container") 
+  transactionContainer.innerText = ""; 
+
+  for(const data of transactionData){
+    const div = document.createElement("div")
+    div.innerHTML = `<div class="flex justify-between items-center p-3 bg-white rounded-xl mt-3">
+                <div class="flex items-center">
+                    <div class="bg-[#f4f5f7] p-3 rounded-full">
+                        <img class="mx-auto" src="./assets/wallet1.png" alt="">
+                    </div>
+                    <div class="ml-3">
+                        <h1>${data.name}</h1>
+                        <p>${data.date}</p>
+                    </div>
+                </div>
+                <div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>`
+        transactionContainer.appendChild(div)
+  }
+})
 
 // cash out section 
 document.getElementById("btn-withdraw-money").addEventListener("click", function (event) {
@@ -83,6 +113,11 @@ document.getElementById("btn-withdraw-money").addEventListener("click", function
     setInnerText(totalAvailableBalance);
 
     document.getElementById("withdraw-amount").value = '';
+    const data = {
+        name: "Cash out",
+        date: new Date().toLocaleDateString()
+    }
+    transactionData.push(data);
 })
 
 // toggle features 
@@ -105,4 +140,8 @@ document.getElementById("getbonus-button").addEventListener("click", function ()
 document.getElementById("transferMoney-button").addEventListener("click", function () {
     handleToggle("transferMoney-parent");
     handleButtonToggle("transferMoney-button");
+})
+document.getElementById("transaction-button").addEventListener("click", function () {
+    handleToggle("transaction-parent");
+    handleButtonToggle("transaction-button");
 })
