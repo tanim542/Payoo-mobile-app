@@ -55,7 +55,10 @@ document.getElementById("btn-add-money")
         const accountNumber = getInputValue("account-number");
         const addAmount = getInputValue("add-amount");
         const addPin = getInputValue("add-pin");
-
+        if(addAmount<=0){
+            alert("invalid amount");
+            return;
+        }
         const availableBalance = getInnerText("available-balance");
 
         if (validAccountNumber !== accountNumber) {
@@ -107,6 +110,10 @@ document.getElementById("btn-withdraw-money").addEventListener("click", function
     const amount = getInputValue("withdraw-amount");
 
     const availableBalance = getInnerText("available-balance");
+    if(amount<=0 || amount>availableBalance){
+        alert("invalid amount");
+        return;
+    }
 
     const totalAvailableBalance = availableBalance - amount;
 
